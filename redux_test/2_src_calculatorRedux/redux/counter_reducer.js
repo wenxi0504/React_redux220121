@@ -5,18 +5,16 @@ count component. reducer is a function
 and action object
 */
 
-
-import {INCREMENT,DECREMENT} from './constant'
-//preState=initState is the default value of the paramet
+//preState=initState is the default value of the parameter
 const initState=0
 export default function countReducer(preState=initState, action) {
     console.log(preState,action)
   if (preState === undefined) preState = 0;
   const { type, data } = action;
   switch (type) {
-    case "INCREMENTt":
+    case "increment":
       return preState + data;
-    case "DECREMENT":
+    case "decrement":
       return preState - data;
     //初始化
     default:
