@@ -24,16 +24,16 @@ export default class Count extends Component {
     }
     incrementIfOdd =()=>{
         const{value}=this.selectNumber
-        const count=store.getState()
+        const{count}=this.state
         if(count%2 !==0){
-            store.dispatch({type:'increment',data:value*1})
-        }
+        this.setState({count:count+value*1})}
+
     }
     incrementAsync =()=>{
         const{value}=this.selectNumber
+        const{count}=this.state
         setTimeout(()=>{
-            store.dispatch({type:'decrement',data:value*1})
-        },500)
+            this.setState({count:count+value*1})},500)
     }
   render() {
     return <div>

@@ -26,8 +26,8 @@ export default class Count extends Component {
         const{value}=this.selectNumber
         const count=store.getState()
         if(count%2 !==0){
-            store.dispatch({type:'increment',data:value*1})
-        }
+            store.dispatch({type:'incrementIfOdd',data:value*1})}
+
     }
     incrementAsync =()=>{
         const{value}=this.selectNumber
