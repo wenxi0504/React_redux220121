@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 // import store in order to get the state from redux
 import store from '../../redux/store'
+
+import {createIncrementAction,createDecrementAction,createIncrementAsyncAction} from '../../redux/counter_action'
 export default class Count extends Component {
     state={carName:'Benz'}
 
@@ -12,29 +14,29 @@ export default class Count extends Component {
     //     })
     // }
 
-    
+
     increment =()=>{
         const{value}=this.selectNumber
-        store.dispatch({type:'increment',data:value*1})
+        store.dispatch(createIncrementAction(value*1))
         
     }
     decrement =()=>{
         const{value}=this.selectNumber
-        store.dispatch({type:'decrement',data:value*1})
+        store.dispatch(createDecrementAction(value*1))
 
     }
     incrementIfOdd =()=>{
         const{value}=this.selectNumber
         const count=store.getState()
         if(count%2 !==0){
-            store.dispatch({type:'increment',data:value*1})
+            store.dispatch(createIncrementAction(value*1))
         }
     }
     incrementAsync =()=>{
         const{value}=this.selectNumber
-        setTimeout(()=>{
-            store.dispatch({type:'decrement',data:value*1})
-        },500)
+        //setTimeout(()=>{
+            store.dispatch(createIncrementAsyncAction(value*1,500))
+       // },500)
     }
   render() {
     return <div>

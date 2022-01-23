@@ -4,15 +4,14 @@ import store from '../../redux/store'
 export default class Count extends Component {
     state={carName:'Benz'}
 
-    // componentDidMount(){
-    //     //listen the state from redux, if the state is changed, invoke render
-    //     store.subscribe(()=>{
-    //         //invoke render
-    //         this.setState({})
-    //     })
-    // }
+    componentDidMount(){
+        //listen the state from redux, if the state is changed, invoke render
+        store.subscribe(()=>{
+            //invoke render
+            this.setState({})
+        })
+    }
 
-    
     increment =()=>{
         const{value}=this.selectNumber
         store.dispatch({type:'increment',data:value*1})

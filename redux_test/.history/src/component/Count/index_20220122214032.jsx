@@ -1,44 +1,32 @@
 import React, { Component } from 'react';
-// import store in order to get the state from redux
-import store from '../../redux/store'
+
 export default class Count extends Component {
     state={carName:'Benz'}
 
-    // componentDidMount(){
-    //     //listen the state from redux, if the state is changed, invoke render
-    //     store.subscribe(()=>{
-    //         //invoke render
-    //         this.setState({})
-    //     })
-    // }
+   
 
-    
     increment =()=>{
         const{value}=this.selectNumber
-        store.dispatch({type:'increment',data:value*1})
+       
         
     }
     decrement =()=>{
         const{value}=this.selectNumber
-        store.dispatch({type:'decrement',data:value*1})
+        
 
     }
     incrementIfOdd =()=>{
         const{value}=this.selectNumber
-        const count=store.getState()
-        if(count%2 !==0){
-            store.dispatch({type:'increment',data:value*1})
-        }
+       
     }
     incrementAsync =()=>{
         const{value}=this.selectNumber
-        setTimeout(()=>{
-            store.dispatch({type:'decrement',data:value*1})
-        },500)
+        //setTimeout(()=>{
+      
     }
   render() {
     return <div>
-        <h1>Result:{store.getState()} </h1>
+        <h1>Result:xxxx </h1>
         <select ref={c=>this.selectNumber=c}>
         <option value="1">1</option>
         <option value="2">2</option>
