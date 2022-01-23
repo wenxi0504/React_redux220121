@@ -11,8 +11,8 @@ return {type:INCREMENT,data}
 //sync action, the value of the action is an object
 export const createDecrementAction = data=>({type:DECREMENT,data})
 
-// Async action , the value of action is a function. async action generally invoke sync action.
-export const createIncrementAsyncAction=(data,time) =>{ 
+// Async action , the value of action is a function
+export const createIncrementAsynctAction=(data,time) =>{
     return ()=>{
      setTimeout(()=>{
         store.dispatch(createIncrementAction(data))

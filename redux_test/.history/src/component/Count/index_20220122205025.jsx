@@ -17,19 +17,19 @@ export default class Count extends Component {
 
     increment =()=>{
         const{value}=this.selectNumber
-        store.dispatch(createIncrementAction(value*1))
+        store.dispatch(createIncrementAction(value))
         
     }
     decrement =()=>{
         const{value}=this.selectNumber
-        store.dispatch(createDecrementAction(value*1))
+        store.dispatch(createDecrementAction(value))
 
     }
     incrementIfOdd =()=>{
         const{value}=this.selectNumber
         const count=store.getState()
         if(count%2 !==0){
-            store.dispatch(createIncrementAction(value*1))
+            store.dispatch(createIncrementAction(value))
         }
     }
     incrementAsync =()=>{

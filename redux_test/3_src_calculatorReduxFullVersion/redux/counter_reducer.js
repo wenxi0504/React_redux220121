@@ -14,9 +14,9 @@ export default function countReducer(preState=initState, action) {
   if (preState === undefined) preState = 0;
   const { type, data } = action;
   switch (type) {
-    case INCREMENT:
+    case "INCREMENTt":
       return preState + data;
-    case DECREMENT:
+    case "DECREMENT":
       return preState - data;
     //初始化
     default:
