@@ -104,6 +104,6 @@ export default connect(
 
 
 
-)(Count)
+)(CountUI)
 
 
