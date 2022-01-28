@@ -3,7 +3,7 @@
 //import createStore in order to create store object
 import{createStore,applyMiddleware} from 'redux'
 // import reducer
-import countReducer from './reduces/counter_reducer'
+import countReducer from './counter_reducer'
 //import redux-thunk , in order to support async action
 import thunk from 'redux-thunk'
 
