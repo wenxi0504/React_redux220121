@@ -15,7 +15,7 @@ this.ageNode.value='';
     }
   render() {
     return <div>
-        <h2>I am a person component,上方组件求和为{this.props.he}</h2>
+        <h2>I am a person component</h2>
      <input ref={c=>this.nameNode=c}  type="text" placeholder="name?"></input>
      <input ref={c=>this.ageNode=c} placeholder="year?"></input>
      <button onClick={this.addPerson}>Add</button>
@@ -29,6 +29,6 @@ this.ageNode.value='';
 }
 
  export default connect(
-    state=>({yoduiren:state.rens,he:state.he}),// 映射状态
+    state=>({yoduiren:state.rens}),// 映射状态
     {jiaYiRen:createAddPersonAction}//隐射操作状态的方法
  )(Person)
