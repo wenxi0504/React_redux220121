@@ -31,6 +31,6 @@ this.ageNode.value='';
  export default connect(
     state=>({
       persons:state.persons,
-      count:state.count}),// 映射状态
+      he:state.count}),// 映射状态
     {jiaYiRen:createAddPersonAction}//隐射操作状态的方法
  )(Person)

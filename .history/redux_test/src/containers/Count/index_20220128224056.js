@@ -3,9 +3,7 @@ import store from '../../redux/store'
 //import connect to connect UI component and redux
 import{connect} from 'react-redux'
 //引入action
-import {increment,
-    decrement,
-    incrementAsync} 
+import {createIncrementAction,createDecrementAction,createIncrementAsyncAction} 
 from '../../redux/actions/counter_action'
 
 import React, { Component } from 'react';
@@ -19,27 +17,27 @@ class Count extends Component {
 
     increment =()=>{
         const{value}=this.selectNumber
-        this.props.increment(value*1)
+        this.props.jia(value*1)
        
         
     }
     decrement =()=>{
         const{value}=this.selectNumber
-        this.props.decrement(value*1)
+        this.props.jian(value*1)
         
 
     }
     incrementIfOdd =()=>{
         const{value}=this.selectNumber
         if(this.props.count %2 !==0){
-            this.props.increment(value*1,500)
+            this.props.jia(value*1,500)
 
         }
        
     }
     incrementAsync =()=>{
         const{value}=this.selectNumber
-        this.props.incrementAsync(value*1)
+        this.props.jiaAsync(value*1)
         //setTimeout(()=>{
       
     }
@@ -100,9 +98,9 @@ export default connect(
         // )
         //精简版 redux 可以自动分发dispatch
         {
-          increment: increment,
-          decrement:decrement,
-          incrementAsync :incrementAsync,
+          jia: createIncrementAction,
+          jian:createDecrementAction,
+          jiaAsync :createIncrementAsyncAction,
 
         }
 

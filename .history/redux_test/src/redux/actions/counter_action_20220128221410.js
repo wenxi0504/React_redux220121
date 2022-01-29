@@ -4,18 +4,18 @@ import { INCREMENT,DECREMENT } from "../constant"
 import store from '../store'
 
 
- export function increment(data){
+ export function createIncrementAction(data){
 return {type:INCREMENT,data}
 }
 
 //sync action, the value of the action is an object
-export const decrement = data=>({type:DECREMENT,data})
+export const createDecrementAction = data=>({type:DECREMENT,data})
 
 // Async action , the value of action is a function. async action generally invoke sync action.
-export const incrementAsync=(data,time) =>{ 
+export const createIncrementAsyncAction=(data,time) =>{ 
     return ()=>{
      setTimeout(()=>{
-        store.dispatch(increment(data))
+        store.dispatch(createIncrementAction(data))
 
      },time)
   } 

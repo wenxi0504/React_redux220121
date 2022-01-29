@@ -15,7 +15,7 @@ export const decrement = data=>({type:DECREMENT,data})
 export const incrementAsync=(data,time) =>{ 
     return ()=>{
      setTimeout(()=>{
-        store.dispatch(increment(data))
+        store.dispatch(createIncrementAction(data))
 
      },time)
   } 
