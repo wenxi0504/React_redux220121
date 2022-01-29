@@ -1,7 +1,7 @@
 // this file is used to create action object for Count component
 
-import { INCREMENT,DECREMENT } from "../constant"
-import store from '../store'
+import { INCREMENT,DECREMENT } from "./constant"
+import store from './store'
 
 
  export function createIncrementAction(data){

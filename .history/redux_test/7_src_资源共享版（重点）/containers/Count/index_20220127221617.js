@@ -44,7 +44,7 @@ class Count extends Component {
   render() {
     return <div>
         console.log('UI组件接收到的props是'，this.props)
-        <h1>Result:{this.props.count},下方组件总人数为:{this.props.renshu} </h1>
+        <h1>Result:xxxx </h1>
         <select ref={c=>this.selectNumber=c}>
         <option value="1">1</option>
         <option value="2">2</option>
@@ -86,7 +86,7 @@ class Count extends Component {
 
 export default connect(
     //state now is object after reduces has more reduces
-    state=>({count:state.he,renshu:state.rens.legth}),
+    state=>({count:state.he}),
     //mapDispatchToProps 的一般写法
     // dispatch =>(
         //     {
